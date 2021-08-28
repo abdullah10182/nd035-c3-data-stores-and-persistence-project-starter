@@ -3,6 +3,9 @@ package com.udacity.jdnd.course3.critter;
 import com.udacity.jdnd.course3.critter.entity.Customer;
 import com.udacity.jdnd.course3.critter.entity.Employee;
 import com.udacity.jdnd.course3.critter.entity.Pet;
+import com.udacity.jdnd.course3.critter.entity.Schedule;
+import com.udacity.jdnd.course3.critter.pet.PetDTO;
+import com.udacity.jdnd.course3.critter.schedule.ScheduleDTO;
 import com.udacity.jdnd.course3.critter.user.CustomerDTO;
 import com.udacity.jdnd.course3.critter.user.EmployeeDTO;
 
@@ -28,6 +31,28 @@ public class Utils {
         employeeDTO.setSkills(employee.getSkills());
         employeeDTO.setDaysAvailable(employee.getDaysAvailable());
         return employeeDTO;
+    }
+
+
+    public static PetDTO getPetDTO(Pet pet) {
+        PetDTO petDTO = new PetDTO();
+        petDTO.setId(pet.getId());
+        petDTO.setName(pet.getName());
+        petDTO.setType(pet.getType());
+        petDTO.setOwnerId(pet.getCustomer().getId());
+        petDTO.setBirthDate(pet.getBirthDate());
+        petDTO.setNotes(pet.getNotes());
+        return petDTO;
+    }
+
+    public static ScheduleDTO getScheduleDTO(Schedule schedule) {
+        ScheduleDTO scheduleDTO = new ScheduleDTO();
+        scheduleDTO.setId(schedule.getId());
+        scheduleDTO.setEmployeeIds(schedule.getEmployees().stream().map(Employee::getId).collect(Collectors.toList()));
+        scheduleDTO.setPetIds(schedule.getPets().stream().map(Pet::getId).collect(Collectors.toList()));
+        scheduleDTO.setDate(schedule.getDate());
+        scheduleDTO.setActivities(schedule.getActivities());
+        return scheduleDTO;
     }
 
 }
