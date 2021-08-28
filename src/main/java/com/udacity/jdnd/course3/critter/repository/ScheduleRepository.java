@@ -1,4 +1,4 @@
-package com.udacity.jdnd.course3.critter.repositories;
+package com.udacity.jdnd.course3.critter.repository;
 
 import com.udacity.jdnd.course3.critter.entity.Employee;
 import com.udacity.jdnd.course3.critter.entity.Pet;
