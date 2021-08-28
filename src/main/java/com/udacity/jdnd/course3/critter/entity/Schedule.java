@@ -1,4 +1,4 @@
-package com.udacity.jdnd.course3.critter.entitie;
+package com.udacity.jdnd.course3.critter.entity;
 
 import com.udacity.jdnd.course3.critter.user.EmployeeSkill;
 import lombok.Data;
