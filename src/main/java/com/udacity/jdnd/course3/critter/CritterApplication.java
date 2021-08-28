@@ -10,7 +10,6 @@ import java.util.List;
 /**
  * Launches the Spring application. Unmodified from starter code.
  */
-@RestController
 @SpringBootApplication
 public class CritterApplication {
 
@@ -19,9 +18,6 @@ public class CritterApplication {
 		SpringApplication.run(CritterApplication.class, args);
 	}
 
-	@GetMapping
-	public String home() {
-		return "Ehloo";
-	}
+
 
 }
